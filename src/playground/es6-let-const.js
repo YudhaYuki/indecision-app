@@ -15,3 +15,15 @@ const nameConst = 'Rika';
 // nameConst = 'Hermawanti';
 // const nameConst = 'Yuki';
 console.log('nameConst', nameConst);
+
+
+
+
+// Scope, no matter VAR, LET or CONST, it stays exist
+function getPetName() {
+    const petName = 'Hal';
+    return petName;
+}
+
+getPetName();
+console.log(petName);
