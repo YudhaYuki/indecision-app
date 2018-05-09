@@ -1,17 +1,20 @@
 console.log('App.js is running');
 
-
-
+// Challange
+// Only render the subtitle (and p tag) if subtitle exist - logical operator
+// Render New p tag - if options.length > 0 "Here are your options" "No option"
 
 var app = {
     title: 'Indecision App',
-    subtitle: 'Put your life in the hands of a computer'
+    subtitle: 'Put your life in the hands of a computer',
+    options: ['One', 'Two']
 }
 
 var template = (
     <div>
         <h1>{app.title}</h1>
-        <p>{app.subtitle}</p>
+        {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'No option'}</p>
         <ul>
             <li>Item one</li>
             <li>Item two</li>
@@ -22,7 +25,7 @@ var template = (
 
 var user = {
     name: 'Yuki',
-    // age: 27,
+    age: 27,
     location: 'Brussels'
 };
 
@@ -42,5 +45,5 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
 
