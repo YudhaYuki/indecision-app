@@ -1,9 +1,5 @@
 console.log('App.js is running');
 
-// Challange
-// Only render the subtitle (and p tag) if subtitle exist - logical operator
-// Render New p tag - if options.length > 0 "Here are your options" "No option"
-
 var app = {
     title: 'Indecision App',
     subtitle: 'Put your life in the hands of a computer',
