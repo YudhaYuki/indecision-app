@@ -24,5 +24,7 @@ function getPetName() {
     return petName;
 }
 
-getPetName();
+// By adding variable, we are no longer to access petName define in the scope above
+// But we are trying to access pet name defined in the below scope
+var petName = getPetName();
 console.log(petName);
