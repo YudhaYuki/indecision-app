@@ -2,9 +2,6 @@
 
 console.log('App.js is running');
 
-// JSX - JavaScript XML
-
-
 var app = {
     title: 'Indecision App',
     subtitle: 'Put your life in the hands of a computer'
@@ -40,16 +37,20 @@ var template = React.createElement(
 );
 
 var user = {
-    name: 'Rene',
-    age: 66,
-    location: 'Ternat'
+    name: 'Yudha',
+    age: 27
 };
 
-/*
-var userName = 'Yudha';
-var userAge = 27;
-var userLocation = 'Brussels';
-*/
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+}
 
 var templateTwo = React.createElement(
     'div',
@@ -65,13 +66,9 @@ var templateTwo = React.createElement(
         'Age: ',
         user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        user.location
-    )
+    getLocation(user.location)
 );
+
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
