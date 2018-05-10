@@ -1,38 +1,23 @@
-'use strict';
+"use strict";
 
-// function square(x) {
-//     return x * x;
-// };
+// Arguments object - no longer bound with arrow function
 
-// console.log(square(3));
-
-// // const squareArrow = (x) => {
-// //     return x * x
-// // };
-
-
-// // Another expression syntax
-// const squareArrow = (x) => x * x;
-
-// console.log(squareArrow(4));
-
-
-// CHALLANGE - Use Arrow Function
-// getFirstName ('Mike Smith') -> "Mike"
-// Create regular arrow function
-// Create arrow function using short hand syntax
-
-/* FIRST VERSION
-const getFirstName = (fullName) => {
-    return fullName.split(' ')[0];
+// ES5
+/*
+const add = function(a, b) {
+    console.log(arguments);
+    return a + b;
 }
-
-console.log(getFirstName('Yudha Yuki'));
+ console.log(add(55, 1, 1001))
 */
 
-// SECOND VERSION
-var getFirstName = function getFirstName(fullName) {
-    return fullName.split(' ')[0];
+// ES6
+
+var add = function add(a, b) {
+    // console.log(arguments);
+    return a + b;
 };
 
-console.log(getFirstName('Yudha Yuki'));
+console.log(add(55, 1, 1001));
+
+// this keyword - no longer bound
