@@ -43,6 +43,7 @@
 
 
         // ES6
+        /*
         const user = {
             name: 'Yudha',
             cities: ['Brussels', 'Prague', 'Rotterdam'],
@@ -54,5 +55,80 @@
         };
 
         user.printPlacesLived();
+        */
+
+
+        // ES6 MAP
+        /* Normal
+        const user = {
+            name: 'Yudha',
+            cities: ['Brussels', 'Prague', 'Rotterdam'],
+            printPlacesLived() {
+                const cityMessages = this.cities.map((city) => {
+                    return this.name + ' has live in ' + city;
+                });
+
+                return cityMessages;
+            }
+        };
+
+        console.log(user.printPlacesLived());
+        */
+
+
+        // Simplified I
+        /*
+        const user = {
+            name: 'Yudha',
+            cities: ['Brussels', 'Prague', 'Rotterdam'],
+            printPlacesLived() {
+                return this.cities.map((city) => {
+                    return this.name + ' has live in ' + city;
+                });
+            }
+        };
+
+        console.log(user.printPlacesLived());
+        */
+
+
+
+        // Simplified II
+        const user = {
+            name: 'Yudha',
+            cities: ['Brussels', 'Prague', 'Rotterdam'],
+            printPlacesLived() {
+                return this.cities.map((city) => this.name + ' has live in ' + city);
+            }
+        };
+
+        console.log(user.printPlacesLived());
+
+
+
+
+
+// Challange Area
+
+const multiplier = {
+    // numbers - array of numbers
+    // multiplyBy - single number
+    // multiply - return a new array where the number have been multiplied
+
+    numbers : [10, 20, 30],
+    multiplyBy: 3,
+    multiply() {
+        return this.numbers.map((number) => this.multiplyBy * number);
+    }
+
+};
+
+console.log(multiplier.multiply());
+        
+
+        
+
+
+
 
 
