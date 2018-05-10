@@ -1,13 +1,38 @@
-"use strict";
+'use strict';
 
-function square(x) {
-    return x * x;
+// function square(x) {
+//     return x * x;
+// };
+
+// console.log(square(3));
+
+// // const squareArrow = (x) => {
+// //     return x * x
+// // };
+
+
+// // Another expression syntax
+// const squareArrow = (x) => x * x;
+
+// console.log(squareArrow(4));
+
+
+// CHALLANGE - Use Arrow Function
+// getFirstName ('Mike Smith') -> "Mike"
+// Create regular arrow function
+// Create arrow function using short hand syntax
+
+/* FIRST VERSION
+const getFirstName = (fullName) => {
+    return fullName.split(' ')[0];
+}
+
+console.log(getFirstName('Yudha Yuki'));
+*/
+
+// SECOND VERSION
+var getFirstName = function getFirstName(fullName) {
+    return fullName.split(' ')[0];
 };
 
-console.log(square(3));
-
-var squareArrow = function squareArrow(x) {
-    return x * x;
-};
-
-console.log(squareArrow(5));
+console.log(getFirstName('Yudha Yuki'));
