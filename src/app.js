@@ -3,13 +3,18 @@ console.log('App.js is running');
 const app = {
     title: 'Indecision App',
     subtitle: 'Put your life in the hands of a computer',
-    options: ['One', 'Two']
+    options: []
 }
 
 const onFormSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Form submitted');
+    const option = e.target.elements.option.value;
+
+    if (option) {
+        app.options.push(option);
+        e.target.elements.option.value = '';
+    }
 }
 
 const template = (
@@ -17,6 +22,7 @@ const template = (
         <h1>{app.title}</h1>
         {app.subtitle && <p>{app.subtitle}</p>}
         <p>{app.options.length > 0 ? 'Here are your options' : 'No option'}</p>
+        <p>{app.options.length}</p>
         <ol>
             <li>Item one</li>
             <li>Item two</li>
