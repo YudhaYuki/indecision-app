@@ -55,6 +55,24 @@ var render = function render() {
             app.options.length
         ),
         React.createElement(
+            'button',
+            { onClick: onRemoveAll },
+            'Remove All'
+        ),
+        [React.createElement(
+            'p',
+            null,
+            'a'
+        ), React.createElement(
+            'p',
+            null,
+            'b'
+        ), React.createElement(
+            'p',
+            null,
+            'c'
+        )],
+        React.createElement(
             'ol',
             null,
             React.createElement(
@@ -67,11 +85,6 @@ var render = function render() {
                 null,
                 'Item two'
             )
-        ),
-        React.createElement(
-            'button',
-            { onClick: onRemoveAll },
-            'Remove All'
         ),
         React.createElement(
             'form',

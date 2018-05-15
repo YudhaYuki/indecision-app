@@ -36,13 +36,17 @@ const render = () => {
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No option'}</p>
             <p>{app.options.length}</p>
+            <button onClick={onRemoveAll}>Remove All</button>
+
+            {
+                [<p>a</p>, <p>b</p>, <p>c</p>]
+            }
+
             <ol>
                 <li>Item one</li>
                 <li>Item two</li>
             </ol>
             
-            <button onClick={onRemoveAll}>Remove All</button>
-    
             <form onSubmit={onFormSubmit}>
                 <input type="text" name="option" />
                 <button>Add Option</button>
