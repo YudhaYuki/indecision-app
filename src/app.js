@@ -39,7 +39,7 @@ const render = () => {
             <button onClick={onRemoveAll}>Remove All</button>
 
             {
-                [<p>a</p>, <p>b</p>, <p>c</p>]
+                [<p key="1">a</p>, <p key="2">b</p>, <p key="3">c</p>]
             }
 
             <ol>

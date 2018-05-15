@@ -61,15 +61,15 @@ var render = function render() {
         ),
         [React.createElement(
             'p',
-            null,
+            { key: '1' },
             'a'
         ), React.createElement(
             'p',
-            null,
+            { key: '2' },
             'b'
         ), React.createElement(
             'p',
-            null,
+            { key: '3' },
             'c'
         )],
         React.createElement(
