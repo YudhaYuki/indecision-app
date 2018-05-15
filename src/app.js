@@ -15,15 +15,20 @@ const onFormSubmit = (e) => {
         app.options.push(option);
         e.target.elements.option.value = '';
 
-        // 3
+        // 3. CH1
         render();
     }
+}
+
+const onRemoveAll = () => {
+    app.options = [];
+    render();
 }
 
 const appRoot = document.getElementById('app');
 
 
-// 1
+// 1. CH1
 const render = () => {
     const template = (
         <div>
@@ -35,6 +40,8 @@ const render = () => {
                 <li>Item one</li>
                 <li>Item two</li>
             </ol>
+            
+            <button onClick={onRemoveAll}>Remove All</button>
     
             <form onSubmit={onFormSubmit}>
                 <input type="text" name="option" />
@@ -46,14 +53,18 @@ const render = () => {
     ReactDOM.render(template, appRoot);
 }
 
-// 2
+// 2. CH1
 render();
 
 
 
-/* CHALLANGE
+/* CHALLANGE 1
     1. Create render function that render the new jsx
     2. Call it right away
     3. Call it after option array added to
+*/
 
+/* CHALLANGE 2
+    1. Create "Remove All" button above list
+    2. onClick --> wipe the array --> rerender
 */
