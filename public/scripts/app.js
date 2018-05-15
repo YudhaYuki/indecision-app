@@ -1,38 +1,33 @@
 'use strict';
 
-var visibility = false;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var toggleVisibility = function toggleVisibility() {
-    visibility = !visibility;
-    render();
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var render = function render() {
-    var jsx = React.createElement(
-        'div',
-        null,
-        React.createElement(
-            'h1',
-            null,
-            'Visibility Toggle'
-        ),
-        React.createElement(
-            'button',
-            { onClick: toggleVisibility },
-            visibility ? 'Hide Details' : 'Show details'
-        ),
-        visibility && React.createElement(
-            'div',
-            null,
-            React.createElement(
-                'p',
-                null,
-                'Hey, this are some details you can now see!'
-            )
-        )
-    );
+var Person = function () {
+    function Person() {
+        var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';
 
-    ReactDOM.render(jsx, document.getElementById('app'));
-};
+        _classCallCheck(this, Person);
 
-render();
+        this.name = name;
+    }
+
+    // method
+
+
+    _createClass(Person, [{
+        key: 'getGreeting',
+        value: function getGreeting() {
+            return 'Hi, I am ' + this.name + ' !';
+        }
+    }]);
+
+    return Person;
+}();
+
+var me = new Person('Yudha Yuki');
+console.log(me.getGreeting());
+
+var otherPerson = new Person();
+console.log(otherPerson.getGreeting());
