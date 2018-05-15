@@ -14,27 +14,46 @@ const onFormSubmit = (e) => {
     if (option) {
         app.options.push(option);
         e.target.elements.option.value = '';
+
+        // 3
+        render();
     }
 }
 
-const template = (
-    <div>
-        <h1>{app.title}</h1>
-        {app.subtitle && <p>{app.subtitle}</p>}
-        <p>{app.options.length > 0 ? 'Here are your options' : 'No option'}</p>
-        <p>{app.options.length}</p>
-        <ol>
-            <li>Item one</li>
-            <li>Item two</li>
-        </ol>
-
-        <form onSubmit={onFormSubmit}>
-            <input type="text" name="option" />
-            <button>Add Option</button>
-        </form>
-    </div> 
-);
-
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+
+// 1
+const render = () => {
+    const template = (
+        <div>
+            <h1>{app.title}</h1>
+            {app.subtitle && <p>{app.subtitle}</p>}
+            <p>{app.options.length > 0 ? 'Here are your options' : 'No option'}</p>
+            <p>{app.options.length}</p>
+            <ol>
+                <li>Item one</li>
+                <li>Item two</li>
+            </ol>
+    
+            <form onSubmit={onFormSubmit}>
+                <input type="text" name="option" />
+                <button>Add Option</button>
+            </form>
+        </div> 
+    );
+
+    ReactDOM.render(template, appRoot);
+}
+
+// 2
+render();
+
+
+
+/* CHALLANGE
+    1. Create render function that render the new jsx
+    2. Call it right away
+    3. Call it after option array added to
+
+*/
