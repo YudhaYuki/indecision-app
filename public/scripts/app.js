@@ -28,7 +28,7 @@ var onRemoveAll = function onRemoveAll() {
 
 var appRoot = document.getElementById('app');
 
-var numbers = [55, 101, 1000];
+// const numbers = [55, 101, 1000];
 
 var render = function render() {
     var template = React.createElement(
@@ -59,27 +59,22 @@ var render = function render() {
             { onClick: onRemoveAll },
             'Remove All'
         ),
-        numbers.map(function (number) {
-            return React.createElement(
-                'p',
-                { key: number },
-                'Number : ',
-                number
-            );
-        }),
         React.createElement(
             'ol',
             null,
-            React.createElement(
-                'li',
-                null,
-                'Item one'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Item two'
-            )
+
+            /* CHALLANGE
+            Map over app.options getting back an array of list (set key and text)
+            */
+            app.options.map(function (option) {
+                return React.createElement(
+                    'li',
+                    { key: option },
+                    ' ',
+                    option,
+                    ' '
+                );
+            })
         ),
         React.createElement(
             'form',
