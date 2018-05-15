@@ -24,9 +24,13 @@ const onRemoveAll = () => {
     render();
 }
 
-const appRoot = document.getElementById('app');
+const onMakeDecision = () => {
+    const randomNum = Math.floor(Math.random() * app.options.length);
+    const option = app.options[randomNum];
+    alert(option);
+};
 
-// const numbers = [55, 101, 1000];
+const appRoot = document.getElementById('app');
 
 const render = () => {
     const template = (
@@ -34,22 +38,13 @@ const render = () => {
             <h1>{app.title}</h1>
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No option'}</p>
-            <p>{app.options.length}</p>
-            <button onClick={onRemoveAll}>Remove All</button>
 
-            {   
-                /*
-                numbers.map((number) => {
-                    return <p key={number}>Number : {number}</p>
-                })
-                */
-            }
+            <button onClick={onMakeDecision}>What should I do?</button>
+
+            <button onClick={onRemoveAll}>Remove All</button>
  
             <ol>
             {
-                /* CHALLANGE
-                Map over app.options getting back an array of list (set key and text)
-                */
                 app.options.map((option) => {
                     return <li key={option}> {option} </li>
                 })
