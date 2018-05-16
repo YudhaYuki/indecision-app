@@ -39,9 +39,48 @@ class Student extends Person {
     }
 }
 
-const me = new Student('Yudha Yuki', 27, 'Computer Science');
-console.log(me.getDescription());
+// const me = new Student('Yudha Yuki', 27, 'Computer Science');
+// console.log(me.getDescription());
 
-const otherPerson = new Student();
-console.log(otherPerson.getDescription());
+// const otherPerson = new Student();
+// console.log(otherPerson.getDescription());
+
+
+
+
+
+
+// CHALLANGE
+/*
+    - Traveller --> Person
+    - Add support for homelocation
+    - Overwrite getGreeting
+        - Hi, I am Yudha Yuki. I'm visiting from Indonesia.
+        - Hi, I am Yudha Yuki. (If no home location)
+
+*/
+
+class Traveller extends Person {
+    constructor(name, age, homeLocation) {
+        super(name);
+        this.homeLocation = homeLocation;
+    }
+
+    getGreeting() {
+        let greeting = super.getGreeting();
+
+        if (this.homeLocation) {
+            greeting += ` I'm visiting ${this.homeLocation}.`
+        }
+
+        return greeting;
+    }
+}
+
+
+const me = new Traveller('Yudha Yuki', 27, 'Indonesia');
+console.log(me.getGreeting());
+
+const otherPerson = new Traveller(undefined, undefined, 'Nowhere');
+console.log(otherPerson.getGreeting());
 

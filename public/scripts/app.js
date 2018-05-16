@@ -80,8 +80,53 @@ var Student = function (_Person) {
     return Student;
 }(Person);
 
-var me = new Student('Yudha Yuki', 27, 'Computer Science');
-console.log(me.getDescription());
+// const me = new Student('Yudha Yuki', 27, 'Computer Science');
+// console.log(me.getDescription());
 
-var otherPerson = new Student();
-console.log(otherPerson.getDescription());
+// const otherPerson = new Student();
+// console.log(otherPerson.getDescription());
+
+
+// CHALLANGE
+/*
+    - Traveller --> Person
+    - Add support for homelocation
+    - Overwrite getGreeting
+        - Hi, I am Yudha Yuki. I'm visiting from Indonesia.
+        - Hi, I am Yudha Yuki. (If no home location)
+
+*/
+
+var Traveller = function (_Person2) {
+    _inherits(Traveller, _Person2);
+
+    function Traveller(name, age, homeLocation) {
+        _classCallCheck(this, Traveller);
+
+        var _this2 = _possibleConstructorReturn(this, (Traveller.__proto__ || Object.getPrototypeOf(Traveller)).call(this, name));
+
+        _this2.homeLocation = homeLocation;
+        return _this2;
+    }
+
+    _createClass(Traveller, [{
+        key: 'getGreeting',
+        value: function getGreeting() {
+            var greeting = _get(Traveller.prototype.__proto__ || Object.getPrototypeOf(Traveller.prototype), 'getGreeting', this).call(this);
+
+            if (this.homeLocation) {
+                greeting += ' I\'m visiting ' + this.homeLocation + '.';
+            }
+
+            return greeting;
+        }
+    }]);
+
+    return Traveller;
+}(Person);
+
+var me = new Traveller('Yudha Yuki', 27, 'Indonesia');
+console.log(me.getGreeting());
+
+var otherPerson = new Traveller(undefined, undefined, 'Nowhere');
+console.log(otherPerson.getGreeting());
