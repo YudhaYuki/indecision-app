@@ -20,9 +20,16 @@ class Person {
     }
 }
 
-const me = new Person('Yudha Yuki', 27);
-console.log(me.getDescription());
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+    }
+}
 
-const otherPerson = new Person();
-console.log(otherPerson.getDescription());
+const me = new Student('Yudha Yuki', 27, 'Computer Science');
+console.log(me);
+
+const otherPerson = new Student();
+console.log(otherPerson);
 
