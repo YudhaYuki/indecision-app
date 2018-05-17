@@ -3,6 +3,7 @@ class IndecisionApp extends React.Component {
         super(props);
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handlePick = this.handlePick.bind(this);
+        this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
             options: ['Thing one', 'Thing two', 'Thing three']
         };
@@ -16,13 +17,18 @@ class IndecisionApp extends React.Component {
         });
     }
 
-    // handlePick - passdown to Action and setup onClick - bind here
-    // randomly pick an option and alert it
-
     handlePick() {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
         alert(option);
+    }
+
+    handleAddOption(option) {
+        this.setState((prevState) => {
+            return {
+                options: prevState.options.concat([option])
+            }
+        });
     }
 
     render() {
@@ -40,7 +46,9 @@ class IndecisionApp extends React.Component {
                     options={this.state.options}
                     handleDeleteOptions={this.handleDeleteOptions}
                 />
-                <AddOption />
+                <AddOption 
+                    handleAddOption={this.handleAddOption}
+                />
             </div>
         );
     }
@@ -96,20 +104,21 @@ class Option extends React.Component {
     }
 }
 
-// CHALLANGE 
-/*
-    - Setup the form with input and submit button
-    - wireUp on Submit
-    - handleAddOption -> Fetch the value typed -> if value, then alert !
-*/
+
 class AddOption extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.handleAddOption = this.handleAddOption.bind(this);
+    }
+
     handleAddOption(e) {
         e.preventDefault();
 
         const option = e.target.elements.option.value.trim();
 
         if (option) {
-            alert(option);
+            this.props.handleAddOption(option);
         }
     } 
 
