@@ -15,7 +15,7 @@ var obj = {
     }
 };
 
-var getName = obj.getName.bind(obj);
+var getName = obj.getName.bind({ name: 'Yudha' });
 
 console.log(getName());
 

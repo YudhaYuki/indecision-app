@@ -6,7 +6,7 @@ const obj = {
     }
 };
 
-const getName = obj.getName.bind(obj);
+const getName = obj.getName.bind({name: 'Yudha'});
 
 console.log(getName());
 
