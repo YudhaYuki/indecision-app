@@ -102,13 +102,6 @@ var Action = function (_React$Component3) {
     return Action;
 }(React.Component);
 
-// CHALLANGE 
-/*
-    - Add Remove All button
-    - Setup handleRemoveAll --> alert some message
-    - setup onClick to fire the method
-*/
-
 var Options = function (_React$Component4) {
     _inherits(Options, _React$Component4);
 
@@ -144,8 +137,6 @@ var Options = function (_React$Component4) {
     return Options;
 }(React.Component);
 
-// CHALLANGE --> Option component here
-
 var Option = function (_React$Component5) {
     _inherits(Option, _React$Component5);
 
@@ -169,6 +160,14 @@ var Option = function (_React$Component5) {
     return Option;
 }(React.Component);
 
+// CHALLANGE 
+/*
+    - Setup the form with input and submit button
+    - wireUp on Submit
+    - handleAddOption -> Fetch the value typed -> if value, then alert !
+*/
+
+
 var AddOption = function (_React$Component6) {
     _inherits(AddOption, _React$Component6);
 
@@ -179,12 +178,32 @@ var AddOption = function (_React$Component6) {
     }
 
     _createClass(AddOption, [{
+        key: 'handleAddOption',
+        value: function handleAddOption(e) {
+            e.preventDefault();
+
+            var option = e.target.elements.option.value;
+
+            if (option) {
+                alert(option);
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
                 'div',
                 null,
-                'Add option component here'
+                React.createElement(
+                    'form',
+                    { onSubmit: this.handleAddOption },
+                    React.createElement('input', { type: 'text', name: 'option' }),
+                    React.createElement(
+                        'button',
+                        null,
+                        'Submit'
+                    )
+                )
             );
         }
     }]);

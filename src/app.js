@@ -40,13 +40,6 @@ class Action extends React.Component {
     }
 }
 
-// CHALLANGE 
-/*
-    - Add Remove All button
-    - Setup handleRemoveAll --> alert some message
-    - setup onClick to fire the method
-*/
-
 class Options extends React.Component {
 
     handleRemoveAll() {
@@ -65,8 +58,6 @@ class Options extends React.Component {
     }
 }
 
-// CHALLANGE --> Option component here
-
 class Option extends React.Component {
     render() {
         return (
@@ -77,11 +68,30 @@ class Option extends React.Component {
     }
 }
 
+// CHALLANGE 
+/*
+    - Setup the form with input and submit button
+    - wireUp on Submit
+    - handleAddOption -> Fetch the value typed -> if value, then alert !
+*/
 class AddOption extends React.Component {
+    handleAddOption(e) {
+        e.preventDefault();
+
+        const option = e.target.elements.option.value;
+
+        if (option) {
+            alert(option);
+        }
+    } 
+
     render() {
         return (
             <div>
-                Add option component here
+                <form onSubmit={this.handleAddOption}>
+                    <input type="text" name="option" />
+                    <button>Submit</button>
+                </form>
             </div>
         );
     }
