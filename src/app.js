@@ -40,13 +40,26 @@ class Action extends React.Component {
     }
 }
 
+// CHALLANGE 
+/*
+    - Add Remove All button
+    - Setup handleRemoveAll --> alert some message
+    - setup onClick to fire the method
+*/
+
 class Options extends React.Component {
+
+    handleRemoveAll() {
+        alert('handleRemoveAll');
+    }
+
     render() {
         return (
             <div>
-                {
+                <button onClick = {this.handleRemoveAll}>Remove All</button>
+                    {
                     this.props.options.map((option) => <Option key={option} optionText={option} />)
-                }
+                    }
             </div>
         );
     }
