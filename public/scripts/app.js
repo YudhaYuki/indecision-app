@@ -20,8 +20,7 @@ var Counter = function (_React$Component) {
         _this.handleMinusOne = _this.handleMinusOne.bind(_this);
         _this.handleReset = _this.handleReset.bind(_this);
         _this.state = {
-            count: 0,
-            name: 'Yudha'
+            count: 0
         };
         return _this;
     }
@@ -38,7 +37,11 @@ var Counter = function (_React$Component) {
     }, {
         key: 'handleMinusOne',
         value: function handleMinusOne() {
-            console.log('handleMinusOne');
+            this.setState(function (prevState) {
+                return {
+                    count: prevState.count - 1
+                };
+            });
         }
     }, {
         key: 'handleReset',
@@ -51,7 +54,6 @@ var Counter = function (_React$Component) {
             return React.createElement(
                 'div',
                 null,
-                this.state.name,
                 React.createElement(
                     'h1',
                     null,
