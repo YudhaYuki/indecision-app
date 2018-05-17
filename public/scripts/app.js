@@ -46,21 +46,27 @@ var Counter = function (_React$Component) {
     }, {
         key: 'handleReset',
         value: function handleReset() {
-            // this.setState(() => {
-            //     return {
-            //         count: 0
-            //     };
-            // });
+            this.setState(function () {
+                return {
+                    count: 0
+                };
+            });
+
+            this.setState(function (prevState) {
+                return {
+                    count: prevState.count + 1
+                };
+            });
 
             // Alternative
-            this.setState({
-                count: 0
-            });
+            // this.setState({
+            //     count: 0
+            // });
 
             // Problem encounter
-            this.setState({
-                count: this.state.count + 1
-            });
+            // this.setState({
+            //     count: this.state.count + 1
+            // });
         }
     }, {
         key: 'render',
