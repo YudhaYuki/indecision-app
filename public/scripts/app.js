@@ -56,6 +56,11 @@ var Counter = function (_React$Component) {
             this.setState({
                 count: 0
             });
+
+            // Problem encounter
+            this.setState({
+                count: this.state.count + 1
+            });
         }
     }, {
         key: 'render',

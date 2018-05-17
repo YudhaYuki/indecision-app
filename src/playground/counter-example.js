@@ -38,7 +38,10 @@ class Counter extends React.Component {
             count: 0
         });
 
-    
+        // Problem encounter
+        this.setState({
+            count: this.state.count + 1
+        });
 
     }
     
