@@ -79,7 +79,7 @@ class Action extends React.Component {
             <div>
                 <button 
                     onClick = {this.props.handlePick}
-                    disabled = {!this.props.hasOptions}
+                    disabled = {!this.props.hasOptions} 
                 >
                     What should I do ?
                 </button>
@@ -131,7 +131,7 @@ class AddOption extends React.Component {
         this.setState(() => {
             return { error };
         });
-    } 
+    }link
 
     render() {
         return (
@@ -145,6 +145,15 @@ class AddOption extends React.Component {
         );
     }
 }
+
+const User = () => {
+    return (
+        <div>
+            <p>Name: </p>
+            <p>Age: </p>
+        </div>
+    );
+};
 
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
