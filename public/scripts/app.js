@@ -26,17 +26,24 @@ var IndecisionApp = function (_React$Component) {
         return _this;
     }
 
-    // handleDeleteOptions() {
-    //     this.setState(() => {
-    //         return {
-    //             options: []
-    //         };
-    //     });
-    // }
-
     _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('componentDidMount');
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            console.log('componentDidUpdate');
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('componentWillUnmount');
+        }
+    }, {
         key: 'handleDeleteOptions',
-        value: function handleDeleteOptions() {
+        value: function handleDeleteOptions(prevProps, prevState) {
             this.setState(function () {
                 return { options: [] };
             });
