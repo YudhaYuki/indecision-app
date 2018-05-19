@@ -25,13 +25,19 @@ var IndecisionApp = function (_React$Component) {
         return _this;
     }
 
+    // handleDeleteOptions() {
+    //     this.setState(() => {
+    //         return {
+    //             options: []
+    //         };
+    //     });
+    // }
+
     _createClass(IndecisionApp, [{
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
-                return {
-                    options: []
-                };
+                return { options: [] };
             });
         }
     }, {
