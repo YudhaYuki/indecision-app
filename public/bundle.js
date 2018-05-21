@@ -69,14 +69,14 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person_js__ = __webpack_require__(2);
 // import './utils.js';
+// import substract, { square, add } from './utils.js';
 
-
-console.log('app.js is running');
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](100, 23));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](100, 20));
+// console.log('app.js is running');
+// console.log(square(4));
+// console.log(add(100, 23));
+// console.log(substract(100, 20));
 
 
 
@@ -93,29 +93,42 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](100, 20))
     // Use both printing result to the console
 */
 
-// import { isAdult, canDrink } from './person.js';
 
-// console.log(isAdult(18));
-// console.log(canDrink(20));
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["c" /* isAdult */](18));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](20));
+
+
+
+
+
+
+
+
+// CHALLANGE II
+/*
+    - Setting the default export and function
+    - Grab the default and call it
+*/
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["b" /* default */](65));
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-console.log('utils.js is running !');
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isSenior; });
 
-const square = (x) => x * x;
-/* harmony export (immutable) */ __webpack_exports__["c"] = square;
+    const isAdult = (age) => age >= 18;
+    const canDrink = (age) => age >= 21;
 
+    const isSenior = (age) => age >= 65;
 
-const add = (a, b) => a + b;
-/* harmony export (immutable) */ __webpack_exports__["a"] = add;
-
-
-/* harmony default export */ __webpack_exports__["b"] = ((a, b) => a - b);
-
-// export { square, add , substract as default };
+    
 
 /***/ })
 /******/ ]);

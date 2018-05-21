@@ -1,10 +1,10 @@
 // import './utils.js';
-import substract, { square, add } from './utils.js';
+// import substract, { square, add } from './utils.js';
 
-console.log('app.js is running');
-console.log(square(4));
-console.log(add(100, 23));
-console.log(substract(100, 20));
+// console.log('app.js is running');
+// console.log(square(4));
+// console.log(add(100, 23));
+// console.log(substract(100, 20));
 
 
 
@@ -21,7 +21,22 @@ console.log(substract(100, 20));
     // Use both printing result to the console
 */
 
-// import { isAdult, canDrink } from './person.js';
+import isSenior, { isAdult, canDrink } from './person.js';
 
-// console.log(isAdult(18));
-// console.log(canDrink(20));
+console.log(isAdult(18));
+console.log(canDrink(20));
+
+
+
+
+
+
+
+
+// CHALLANGE II
+/*
+    - Setting the default export and function
+    - Grab the default and call it
+*/
+
+console.log(isSenior(65));
