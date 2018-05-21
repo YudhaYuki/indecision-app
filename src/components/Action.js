@@ -1,5 +1,4 @@
 import React from 'react';
-import Option from './Option';
 
 const Action = (props) => {
     return (
