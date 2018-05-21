@@ -32,10 +32,12 @@ var IndecisionApp = function (_React$Component) {
             var json = localStorage.getItem('options');
             var options = JSON.parse(json);
 
-            // this.setState(() => ({ options: options })) is the same as the following (SHORT HAND)
-            this.setState(function () {
-                return { options: options };
-            });
+            if (options) {
+                // this.setState(() => ({ options: options })) is the same as the following (SHORT HAND)
+                this.setState(function () {
+                    return { options: options };
+                });
+            }
         }
     }, {
         key: 'componentDidUpdate',
