@@ -14,8 +14,10 @@ class IndecisionApp extends React.Component {
         console.log('Fetchin Data');
     }
 
-    componentDidUpdate() {
-        console.log('Saving data');
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.options.length !== this.state.options.length) {
+            console.log('Saving data');
+        }
     }
 
     componentWillUnmount() {
