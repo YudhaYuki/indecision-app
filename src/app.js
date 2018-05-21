@@ -11,11 +11,11 @@ class IndecisionApp extends React.Component {
     }
 
     componentDidMount() {
-        console.log('componentDidMount');
+        console.log('Fetchin Data');
     }
 
     componentDidUpdate() {
-        console.log('componentDidUpdate');
+        console.log('Saving data');
     }
 
     componentWillUnmount() {
