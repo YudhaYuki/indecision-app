@@ -971,7 +971,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // install -> import -> use
 
-var template = _react2.default.createElement('p', {}, 'Testing 123');
+var template = _react2.default.createElement(
+  'p',
+  null,
+  'THIS IS JSX from Webpack'
+);
 _reactDom2.default.render(template, document.getElementById('app'));
 
 /***/ }),
