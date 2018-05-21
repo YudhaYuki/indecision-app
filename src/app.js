@@ -11,7 +11,12 @@ class IndecisionApp extends React.Component {
     }
 
     componentDidMount() {
-        console.log('Fetchin Data');
+        const json = localStorage.getItem('options');
+        const options = JSON.parse(json);
+
+        // this.setState(() => ({ options: options })) is the same as the following (SHORT HAND)
+        this.setState(() => ({ options }))
+
     }
 
     componentDidUpdate(prevProps, prevState) {
