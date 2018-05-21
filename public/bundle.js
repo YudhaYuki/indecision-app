@@ -113,9 +113,7 @@ const add = (a, b) => a + b;
 /* harmony export (immutable) */ __webpack_exports__["a"] = add;
 
 
-const substract = (a, b) => a - b ;
-
-/* harmony default export */ __webpack_exports__["b"] = (substract);
+/* harmony default export */ __webpack_exports__["b"] = ((a, b) => a - b);
 
 // export { square, add , substract as default };
 
