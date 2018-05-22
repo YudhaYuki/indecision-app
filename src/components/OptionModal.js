@@ -14,7 +14,3 @@ const OptionModal = (props) => (
 );
 
 export default OptionModal;
-
-// Create a new event handler in IndecisionApp that clears selectoption state
-// Pass that into OptionModal
-// Call it on button click
