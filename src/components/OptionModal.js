@@ -8,7 +8,12 @@ const OptionModal = (props) => (
     >
         <h3>Selected Option</h3>
         {props.selectedOption && <p>{props.selectedOption}</p>}
+        <button onClick={props.handleClearSelectedOption}>Okay</button>
     </Modal>
 );
 
 export default OptionModal;
+
+// Create a new event handler in IndecisionApp that clears selectoption state
+// Pass that into OptionModal
+// Call it on button click
